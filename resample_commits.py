@@ -54,20 +54,15 @@ def parse_commits(repo_path, interval_units):
 
 if __name__ == "__main__":
     # input repository url
-    # repo_url = input("Enter repository url: ")
-    repo_url = "https://github.com/TimoWacke/Second-Brain.git"
+    repo_url = input("Enter repository url: ")
     # input new branch name
-    # new_branch_name = input("Enter new branch name: ")
-    new_branch_name = "squash"
+    new_branch_name = input("Enter new branch name: ")
     # input source branch
-    # source_branch = input("Enter branch to summarize: ")
-    source_branch = "main"
+    source_branch = input("Enter branch to summarize: ")
     # commiter name
-    # commiter_name = input("Enter commiter name: ")
-    commiter_name = "Timo Wacke"
+    commiter_name = input("Enter commiter name: ")
     # commiter email
-    # commiter_email = input("Enter commiter email: ")
-    commiter_email = "wacketimo@gmail.com"
+    commiter_email = input("Enter commiter email: ")
     # time interval of commits to be summarized
     interval = int(input("How many minutes between commits to summarize? "))
     
