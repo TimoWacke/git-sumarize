@@ -8,3 +8,17 @@ Or maybe you are using other automated commits, or your quick fixes have gotten 
 That can be hard... Rebasing and Squash might help, but will likely run into thousands of merge conflicts.
 
 I ended up writing a script, to do so. This helped me a lot.
+
+---
+
+Also to change name / email in git history:
+
+You can add this alias:
+
+git config --global alias.change-commits '!'"f() { VAR=\$1; OLD=\$2; NEW=\$3; shift 3; git filter-branch --env-filter \"if [[ \\\"\$\`echo \$VAR\`\\\" = '\$OLD' ]]; then export \$VAR='\$NEW'; fi\" \$@; }; f"
+To change the author name:
+
+git change-commits GIT_AUTHOR_NAME "old name" "new name"
+or the email for only the last 10 commits:
+
+git change-commits GIT_AUTHOR_EMAIL "old@email.com" "new@email.com" HEAD~10..HEAD
